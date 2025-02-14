@@ -1,22 +1,19 @@
 import java.util.Scanner;
 
-interface AreaInterface {
+interface AreaInterface{
     double calc(double x, double y);
 }
-
-class Rect implements AreaInterface {
-    public double calc(double x, double y) {
+class Rect implements AreaInterface{
+    public double calc(double x, double y){
         return (x * y);
     }
 }
-
-class Square implements AreaInterface {
-    public double calc(double x, double y) {
+class Square implements AreaInterface{
+    public double calc(double x, double y){
         return (x * x);
     }
 }
-
-public class Area {
+public class Aarea{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -31,12 +28,12 @@ public class Area {
         Square s = new Square();
         AreaInterface a;
 
-        a = r;
+        a=r;
         System.out.println("\nArea of Rectangle is : " + a.calc(length, breadth));
 
-        a = s;
+        a=s;
         System.out.println("\nArea of Square is : " + a.calc(side, side));
-
+        
         scanner.close();
     }
 }
