@@ -7,10 +7,12 @@ interface InterfaceB {
 }
 
 class MultipleInheritanceClass implements InterfaceA, InterfaceB {
+    @Override
     public void methodA() {
         System.out.println("Method A from InterfaceA");
     }
 
+    @Override
     public void methodB() {
         System.out.println("Method B from InterfaceB");
     }
