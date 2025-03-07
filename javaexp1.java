@@ -1,12 +1,16 @@
 public class javaexp1 {
-    public static void main(String[] args) {
+    void display() {
         try {
-            int[] numbers = {1, 2, 3};
-            System.out.println(numbers[2]); // Accessing a valid index
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Array index is out of bounds!");
+            String str = null;
+            System.out.println(str.length()); 
+        } catch (NullPointerException e) {
+            System.out.println("Null pointer exception occurred!");
         } finally {
             System.out.println("The try-catch block is finished.");
         }
     }
+public static void main(String[] args) {
+        javaexp1 obj = new javaexp1();
+        obj.display();
+}
 }
