@@ -23,4 +23,3 @@ class MultipleInheritanceClass implements InterfaceA, InterfaceB {
         obj.methodB();
     }
 }
-// Compare this snippet from interface2.java
