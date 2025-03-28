@@ -1,6 +1,5 @@
 import java.io.*;
 
-
 class Person implements Serializable {
     int id;
     String name;
@@ -10,7 +9,6 @@ class Person implements Serializable {
         this.name = name;
     }
 }
-
 
 class Student extends Person {
     String course;
@@ -26,11 +24,11 @@ class Student extends Person {
 public class SerializeISA {
     public static void main(String args[]) {
         try {
-            
+            // Use the correct class name "Student"
             Student s1 = new Student(211, "ravi", "Engineering", 50000);
 
-           
-            FileOutputStream fout = new FileOutputStream("txt");
+            // File name should include the extension for better readability
+            FileOutputStream fout = new FileOutputStream("student.txt");
             ObjectOutputStream out = new ObjectOutputStream(fout);
             out.writeObject(s1);
             out.flush();
@@ -38,15 +36,13 @@ public class SerializeISA {
 
             System.out.println("success");
 
-            
+            // Deserialize the object
             try {
-                ObjectInputStream in = new ObjectInputStream(new FileInputStream("txt"));
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream("student.txt"));
                 Student s = (Student) in.readObject();
-                
-               
+
                 System.out.println(s.id + " " + s.name + " " + s.course + " " + s.fee);
-                
-               
+
                 in.close();
             } catch (Exception e) {
                 System.out.println(e);
@@ -55,4 +51,4 @@ public class SerializeISA {
             System.out.println(e);
         }
     }
-}   
+}
